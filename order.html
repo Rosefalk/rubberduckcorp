@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RubberduckCorp</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+        <link rel="stylesheet" href="styles/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="js/libs/jquery-3.2.1.min.js" charset="utf-8"></script>
+        <script src="js/libs/handlebars-v4.0.10.js" charset="utf-8"></script>
+        <script src="js/locales.js" charset="utf-8"></script>
+        <script src="js/script.js" charset="utf-8"></script>
+        <script id="template" type="text/x-handlebars-template">
+            <div class="container-fluid">
+                    <nav class="row navigation">
+                        <div class="col-md-2 column">
+                            <a href="index.html" class="logo" alt="Logo: A rubber duck">
+                                <img class="logo" src="assets/images/rubberduck.svg" alt="" />
+                            </a>
+                        </div>
+                        <div class="col-md-10 column">
+                            <ul>
+                                {{#each navigation}}
+                                <li><a href="{{{url}}}">{{{name}}}</a></li>
+                                {{/each}}
+                                <li>
+                                {{#each locales}}
+                                    <a href="#" class="flag flag--{{{flag}}}" data-localecode="{{{this.language}}}"><!--{{{this.language}}}--></a>
+                                {{/each}}
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                <section>
+                    <div class="row row--unpadded">
+                        <div class="col-md-12 column header-image" style="background-image: url({{pages.order.image}});"></div>
+                    </div>
+                </section>
+                {{#if pages.order.sections.welcome}}
+                <section class="row-centerer bg--pastel-blue">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12 column">
+                                <h1>{{{pages.order.sections.welcome.title}}}</h1>
+                                <p>
+                                    {{{pages.order.sections.welcome.text}}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/if}}
+                {{#if pages.order.sections.orderForm}}
+                <section class="row-centerer">
+                    <div>
+                        <form action="/">
+                            <div class="row">
+                                <div class="col-md-6 column">
+                                    <input type="text" class="name" placeholder="{{pages.order.sections.orderForm.name}}" />
+                                    <div class="error">{{pages.order.sections.orderForm.errorName}}</div>
+                                </div>
+                                <div class="col-md-6 column">
+                                    <input type="text" class="name" placeholder="{{pages.order.sections.orderForm.lastName}}" />
+                                    <div class="error">{{pages.order.sections.orderForm.errorLastName}}</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 column">
+                                    <input type="tel" placeholder="{{pages.order.sections.orderForm.telephone}}" />
+                                    <div class="error">{{pages.order.sections.orderForm.errorTelephone}}</div>
+                                </div>
+                                <div class="col-md-6 column">
+                                    <input type="email" placeholder="{{pages.order.sections.orderForm.email}}" />
+                                    <div class="error">{{pages.order.sections.orderForm.errorEmail}}</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 column">
+                                    <input class="btn btn--yellow" type="submit" value="{{pages.order.sections.orderForm.submit}}" />
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row form-submitted">
+                            <div class="col-md-12 column bg--ok-green">
+                                <div class="text--center">{{pages.order.sections.orderForm.submitOk}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/if}}
+                <footer class="row-centerer footer">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12 column">
+                                <span class="not-copyright">Rubberduck-Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

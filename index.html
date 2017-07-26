@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RubberduckCorp</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+        <link rel="stylesheet" href="styles/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="js/libs/jquery-3.2.1.min.js" charset="utf-8"></script>
+        <script src="js/libs/handlebars-v4.0.10.js" charset="utf-8"></script>
+        <script src="js/locales.js" charset="utf-8"></script>
+        <script src="js/script.js" charset="utf-8"></script>
+        <script id="template" type="text/x-handlebars-template">
+            <div class="container-fluid">
+                    <nav class="row navigation">
+                        <div class="col-md-2 column">
+                            <a href="index.html" class="logo" alt="Logo: A rubber duck">
+                                <img class="logo" src="assets/images/rubberduck.svg" alt="" />
+                            </a>
+                        </div>
+                        <div class="col-md-10 column">
+                            <ul>
+                                {{#each navigation}}
+                                <li><a href="{{{url}}}">{{{name}}}</a></li>
+                                {{/each}}
+                                <li>
+                                    {{#each locales}}
+                                        <a href="#" class="flag flag--{{{flag}}}" data-localecode="{{{this.language}}}">{{{this.language}}}</a>
+                                    {{/each}}
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                <section>
+                    <div class="row row--unpadded">
+                        <div class="col-md-12 column header-image" style="background-image: url('{{pages.home.image}}');"></div>
+                    </div>
+                </section>
+                {{#if pages.home.sections.welcome}}
+                <section class="row-centerer bg--pastel-blue">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12 column">
+                                <h1>{{{pages.home.sections.welcome.title}}}</h1>
+                                <p>
+                                    {{{pages.home.sections.welcome.text}}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/if}}
+                {{#if pages.home.sections.superiority}}
+                <section class="row-centerer">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6 column">
+                                <h2 title="{{{pages.home.sections.superiority.titleJest}}}">{{{pages.home.sections.superiority.title}}}</h2>
+                                <p>
+                                    {{{pages.home.sections.superiority.text}}}
+                                </p>
+                                <small>{{{pages.home.sections.superiority.textJest}}}</small>
+                            </div>
+                            <div class="col-md-6 column">
+                                <h2>{{{pages.home.sections.superiorityBullets.title}}}</h2>
+                                <ul>
+                                    {{#each pages.home.sections.superiorityBullets.bullets}}
+                                    <li>{{{this}}}</li>
+                                    {{/each}}
+                                </ul>
+                                <small>{{{pages.home.sections.superiorityBullets.bulletsJest}}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/if}}
+                {{#if pages.home.sections.callToAction}}
+                <section class="row-centerer bg--duck">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12 text--center column">
+                                <h1>{{{pages.home.sections.callToAction.title}}}</h1>
+                                <a href="order.html" class="btn btn--cta">{{{pages.home.sections.callToAction.buttonText}}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/if}}
+                <footer class="row-centerer footer">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12 column">
+                                <span class="not-copyright">Rubberduck-Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
