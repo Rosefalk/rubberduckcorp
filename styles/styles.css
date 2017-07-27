@@ -16,7 +16,6 @@ ul {
 .header-image {
   height: 500px;
   overflow: hidden;
-  background-image: url("../assets/images/badeand.jpg");
   background-position: center bottom;
   background-size: cover; }
 
@@ -141,10 +140,10 @@ section.row-centerer {
 @keyframes wiggle {
   0% {
     transform: rotateZ(0deg); }
-  
+
   50% {
     transform: rotateZ(-20deg); }
-  
+
   100% {
     transform: rotateZ(20deg); } }
   .navigation .logo img {
