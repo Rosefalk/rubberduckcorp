@@ -23,10 +23,10 @@ $(document).ready(function(){
                     formStatus;
 
                 $submit.on('click', function(e) {
+                    formStatus = true;
                     e.preventDefault();
 
                     function toggleError($el, status) {
-                        formStatus = true;
                         if(!status) {
                             formStatus = false;
                             $el.siblings('.error').css('display', 'block')
@@ -51,7 +51,7 @@ $(document).ready(function(){
                         phoneValidated = validatePhone.test($inputTelephone.val());
 
                     toggleError($inputTelephone, phoneValidated)
-
+                    console.log(emailValidated)
                     if(formStatus) {
                         $form.slideUp(400)
                         $formSubmitted.delay(500).fadeIn();
